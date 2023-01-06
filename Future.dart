@@ -44,3 +44,28 @@ Future<bool> getGenderfunction() {
     () => true,
   );
 }
+
+/// new example
+
+void main() {
+  print("Start");
+  getData();
+  print("End");
+}
+
+void getData() async {
+  try {
+    String data = await middleFunction();
+    print(data);
+  } catch (error) {
+    print("error occord $error");
+  }
+}
+
+Future<String> middleFunction() {
+  return Future.delayed(
+    Duration(seconds: 10),
+    () => "Welcome back",
+  );
+}
+
